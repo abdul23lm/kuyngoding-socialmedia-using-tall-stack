@@ -32,6 +32,7 @@ class Register extends Component
         ]);
 
         $user = User::create([
+            'hash' => \Str::random(32),
             'email' => $this->email,
             'name' => $this->name,
             'password' => Hash::make($this->password),
