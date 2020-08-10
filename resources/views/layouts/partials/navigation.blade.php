@@ -1,4 +1,4 @@
-<div class="bg-cool-gray-600">
+<div class="bg-cool-gray-800">
 <div>
     <div>
         <div>
