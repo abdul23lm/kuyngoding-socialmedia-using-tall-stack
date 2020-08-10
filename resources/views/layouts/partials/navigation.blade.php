@@ -18,7 +18,7 @@
         @auth
             <a  href="{{ route('logout') }}"
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                class="block text-cool-gray-400 hover:text-white">
+                class="block text-cool-red-400 hover:text-white">
                 Log out
             </a>
 
