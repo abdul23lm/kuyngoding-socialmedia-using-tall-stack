@@ -2,9 +2,7 @@
 <div>
     <div>
         <div>
-            <a href="/" class="text-white font-semibold text-lg">
-             {{ config('app.name')}}
-            </a>
+
         </div>
         <div>
 
