@@ -9,7 +9,7 @@
         @else
             <title>{{ config('app.name') }}</title>
         @endif
-		
+
         <!-- Favicon -->
 		<link rel="shortcut icon" href="{{ url(asset('favicon.ico')) }}">
 
@@ -24,7 +24,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
 
-    <body>
+    <body class="antialiased font-sans">
         @yield('body')
 
         <script src="{{ url(mix('js/app.js')) }}"></script>
