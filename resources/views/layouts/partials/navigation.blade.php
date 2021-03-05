@@ -48,7 +48,7 @@
                     </div>
 
                     <div  :class="{ 'md:hidden': !dropDownIsOpen }" class="block md:absolute top-0 right-0 md:mr-4 mt-2 md:mt-15 md:bg-cool-gray-700 md:w-56 md:rounded md:shadow md:py-2 leading-relax md:leading-loose">
-                            <a href="" class="block text-cool-gray-400 hover:text-white px-4">Settings</a>
+                            <a href="{{ route('settings') }}" class="block text-cool-gray-400 hover:text-white px-4">Settings</a>
                             <a href="" class="block text-cool-gray-400 hover:text-white px-4">Your Profile</a>
                             <a href="" class="block text-cool-gray-400 hover:text-white px-4">Your Friends</a>
 
@@ -73,7 +73,5 @@
         </div>
     </div>
 </div>
-
-<div>
-
+</div>
 
