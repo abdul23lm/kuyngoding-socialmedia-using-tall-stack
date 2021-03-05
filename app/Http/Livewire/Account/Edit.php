@@ -10,12 +10,14 @@ class Edit extends Component
     use WithFileUploads;
     public $name;
     public $username;
+    public $description;
     public $picture;
 
     public function mount()
     {
         $this->name = auth()->user()->name;
         $this->username = auth()->user()->username;
+        $this->description = auth()->user()->description;
     }
 
     public function updated($field)
@@ -44,10 +46,12 @@ class Edit extends Component
         auth()->user()->update([
             'name' => $this->name,
             'username' => $this->username,
+            'description' => $this->description,
             'picture' => $picture
         ]);
 
-        return redirect()->to("settings");
+        $identifier = auth()->user()->usernameOrHash;
+        return redirect()->to("user/{$identifier}");
     }
 
     public function render()

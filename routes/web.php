@@ -18,6 +18,9 @@ Route::view('/', 'welcome')->name('home');
 Route::livewire('settings', 'account.edit')->layout('layouts.app', ['title' => 'Settings'])
     ->name('settings');
 
+Route::livewire('user/{identifier}', 'account.show')->layout('layouts.app')
+    ->name('account.show');
+
 Route::layout('layouts.auth')->group(function () {
     Route::middleware('guest')->group(function () {
         Route::livewire('login', 'auth.login')

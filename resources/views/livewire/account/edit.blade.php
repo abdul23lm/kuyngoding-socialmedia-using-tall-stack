@@ -26,9 +26,15 @@
                             <div class="text-red-500 mt-2 text-sm">{{ $message }}</div>
                         @enderror
                     </div>
-                        <button type="submit" class="flex justify-center w-auto px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                            Update
-                        </button>
+                    <div class="mb-5">
+                        <label for="description" class="block font-medium mb-1">Bio</label>
+                        <textarea wire:model="description" id="description" class="w-full form-textarea"></textarea>
+                        @error('description')
+                            <div class="text-red-500 mt-2 text-sm">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                <x-button.primary>Update</x-button.primary>
                 </form>
 
             </div>
