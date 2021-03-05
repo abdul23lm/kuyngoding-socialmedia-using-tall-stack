@@ -18,8 +18,23 @@ class Edit extends Component
         $this->username = auth()->user()->username;
     }
 
+    public function updated($field)
+    {
+        $this->validateOnly($field, [
+            'username' => 'min:3|max:25|unique:users,username,' . auth()->id(),
+            'name' => 'min:3|string'
+        ]);
+    }
+
     public function update()
     {
+
+        $this->validate([
+            'picture' => $this->picture ? 'image|mimes:png,jpg,jpeg' : '',
+            'username' => 'required|min:3|max:25|unique:users,username,' . auth()->id(),
+            'name' => 'required|min:3|string'
+        ]);
+
         if ($this->picture) {
             \Storage::delete(auth()->user()->picture);
             $picture = $this->picture->store('images/profile');

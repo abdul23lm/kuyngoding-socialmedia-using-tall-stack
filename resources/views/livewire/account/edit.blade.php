@@ -8,14 +8,23 @@
                     <div class="mb-5">
                         <label for="picture" class="block font-medium mb-1">Your profile picture</label>
                         <input type="file" wire:model="picture" id="picture">
+                        @error('picture')
+                            <div class="text-red-500 mt-2 text-sm">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mb-5">
                         <label for="name" class="block font-medium mb-1">Username</label>
                         <input type="text" wire:model="username" id="username" class="w-full form-input">
+                        @error('username')
+                            <div class="text-red-500 mt-2 text-sm">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mb-5">
                         <label for="name" class="block font-medium mb-1">Name</label>
                         <input type="text" wire:model="name" id="name" class="w-full form-input">
+                        @error('name')
+                            <div class="text-red-500 mt-2 text-sm">{{ $message }}</div>
+                        @enderror
                     </div>
                         <button type="submit" class="flex justify-center w-auto px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
                             Update
