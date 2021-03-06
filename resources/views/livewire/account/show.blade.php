@@ -16,8 +16,7 @@
                     </div>
                 </div>
 
-                <x-button.primary>Follow</x-button.primary>
-                {{-- <x-button.error>Unfollow</x-button.error> --}}
+                <livewire:follow.button :user="$user"/>
 
             </div>
         </div>
