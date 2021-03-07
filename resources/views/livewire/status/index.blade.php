@@ -11,4 +11,17 @@
             </div>
         </a>
     @endforeach
+
+    @if ($statuses->hasMorePages())
+        <div class="flex justify-center">
+              <x-button.primary wire:click.prevent="loadMore">
+                <span wire:loading>
+                    Please wait . . .
+                </span>
+               <span wire:loading.class="hidden">
+                    Load More
+               </span>
+            </x-button.primary>
+        </div>
+    @endif
 </div>
