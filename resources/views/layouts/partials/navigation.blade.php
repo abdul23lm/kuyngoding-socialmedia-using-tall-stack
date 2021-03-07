@@ -24,9 +24,9 @@
     </div>
     <div x-bind:class="{ 'hidden': !open }" class="leading-loose py-1 md:py-0 md:flex md:items-center justify-between w-full">
         <div class="flex flex-col md:flex-row md:items-center py-2 md:py-0" >
-
+        @auth
         <a href="/timeline" class="block text-cool-gray-600 hover:text-cool-gray-800 px-4 md:py-4">Timeline</a>
-        <a href="#" class="block text-cool-gray-600 hover:text-cool-gray-800 px-4 md:py-4">Explore User</a>
+        @endauth
 
         </div>
 
