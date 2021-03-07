@@ -18,12 +18,14 @@ class Button extends Component
     {
         // dd($this->user);
         auth()->user()->follow($this->user);
+        $this->emit('statisticUpdated');
     }
 
     public function unfollow()
     {
         // dd($this->user);
         auth()->user()->unfollow($this->user);
+        $this->emit('statisticUpdated');
     }
 
     public function render()
