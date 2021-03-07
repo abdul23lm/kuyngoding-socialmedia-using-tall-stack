@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Account;
 
-use App\User;
+use App\Models\User;
 use Livewire\Component;
 
 class Show extends Component
