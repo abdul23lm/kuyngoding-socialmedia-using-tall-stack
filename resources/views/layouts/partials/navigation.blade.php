@@ -25,8 +25,8 @@
     <div x-bind:class="{ 'hidden': !open }" class="leading-loose py-1 md:py-0 md:flex md:items-center justify-between w-full">
         <div class="flex flex-col md:flex-row md:items-center py-2 md:py-0" >
 
+        <a href="/timeline" class="block text-cool-gray-400 hover:text-white px-4 md:py-4">Timeline</a>
         <a href="#" class="block text-cool-gray-400 hover:text-white px-4 md:py-4">Explore User</a>
-        <a href="#" class="block text-cool-gray-400 hover:text-white px-4 md:py-4">Timeline</a>
 
         </div>
 
