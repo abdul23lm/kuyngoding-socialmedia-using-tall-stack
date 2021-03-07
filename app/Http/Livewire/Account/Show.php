@@ -10,6 +10,8 @@ class Show extends Component
 {
     public $user;
     public $perPage = 10;
+    public $bio;
+    public $readmore = true;
 
     public function loadMore()
     {
@@ -20,6 +22,19 @@ class Show extends Component
     public function mount($identifier)
     {
         $this->user = User::where('username', $identifier)->orWhere('hash', $identifier)->first();
+        $this->bio = \Str::limit($this->user->description, 120);
+    }
+
+    public function readMore()
+    {
+        $this->bio = $this->user->description;
+        $this->readmore = false;
+    }
+
+    public function less()
+    {
+        $this->bio = \Str::limit($this->user->description, 120);
+        $this->readmore = true;
     }
 
     public function render()

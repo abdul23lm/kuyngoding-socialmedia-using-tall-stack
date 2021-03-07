@@ -12,7 +12,13 @@
                             <h1 class="font-semibold text-xl text-cool-gray-900 mb-2" >{{ $user->name }}</h1>
                             <div class="text-cool-gray-600 mb-5">
                                 <div class="leading-relaxed mb-4">
-                                    {{ $user->description }}
+                                    {{ $bio }}
+                                    <button wire:click="readMore" class="{{$readmore ? 'block' : 'hidden'}} hover:underline focus:outline-none text-sm text-cool-gray-600 block ">
+                                        Read More
+                                    </button>
+                                    <button wire:click="less" class="{{$readmore ? 'hidden' : 'block'}} hover:underline focus:outline-none text-sm text-cool-gray-600 block ">
+                                        Less
+                                    </button>
                                 </div>
                                 <div>
                                     Joined: {{ $user->created_at->format("d F, Y") }}
