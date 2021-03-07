@@ -1,13 +1,17 @@
-<div>
-    @foreach ($statuses as $status)
-        <a href="{{ route('status.show', $status->hash) }}" class="flex mb-10">
-            <div class="flex-shrink-0 mr-3" wire:poll.5000ms>
-                <img class="w-10 h-10 rounded-full object-cover object-center" src="{{ $status->user->gravatar() }}">
-            </div>
-            <div>
-                <div class="font-semibold text-cool-gray-900">{{ $status->user->name }}</div>
-                <div class="text-sm text-cool-gray-400" >{{ $status->published }}</div>
-                <div class="text-cool-gray-800">{{ $status->body }}</div>
+<div class="container">
+    <div class="flex">
+        <div class="w-1/2">
+            <div class="border border-cool-grey-300 rounded-lg p-5 flex">
+                <div class="mr-3 flex-shrink-0">
+                    <img class="w-16 h-16 rounded-full object-cover object-center" src="{{ $status->user->gravatar() }}" alt="">
+                </div>
+                <div>
+                    <h1 class="font-semibold">{{ $status->user->name }}</h1>
+                    <small class="text-sm text-cool-gray-400 block mb-2">{{ $status->published }}</small>
+                    <div class="text-cool-gray-600">
+                        {{ $status->body }}
+                    </div>
+
                     <div class="text-sm text-cool-gray-400 mt-4 flex items-center -mx-4">
                         <div class="flex items-center mx-4">
                             <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
@@ -19,20 +23,8 @@
                             200 Likes
                         </div>
                     </div>
+                </div>
             </div>
-        </a>
-    @endforeach
-
-    @if ($statuses->hasMorePages())
-        <div class="flex justify-center">
-              <x-button.primary wire:click.prevent="loadMore">
-                <span wire:loading>
-                    Please wait . . .
-                </span>
-               <span wire:loading.class="hidden">
-                    Load More
-               </span>
-            </x-button.primary>
         </div>
-    @endif
+    </div>
 </div>
