@@ -7,7 +7,16 @@ use Livewire\Component;
 
 class Index extends Component
 {
+    public $statusId;
     public $perPage = 10;
+
+    protected $listeners = [
+        "statusUpdated",
+    ];
+
+    public function statusUpdated($statusId)
+    {
+    }
 
     public function loadMore()
     {
