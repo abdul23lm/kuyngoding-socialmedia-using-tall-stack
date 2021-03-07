@@ -1,7 +1,7 @@
 <div>
     @foreach ($statuses as $status)
         <a href="#" class="flex mb-5">
-            <div class="flex-shrink-0 mr-3">
+            <div class="flex-shrink-0 mr-3" wire:poll.5000ms>
                 <img class="w-10 h-10 rounded-full object-cover object-center" src="{{ $status->user->gravatar() }}">
             </div>
             <div>
