@@ -13,12 +13,14 @@
                             <div class="text-cool-gray-600 mb-5">
                                 <div class="leading-relaxed mb-4">
                                     {{ $bio }}
+                                    @if (strlen($bio) >= 120)
                                     <button wire:click="readMore" class="{{$readmore ? 'block' : 'hidden'}} hover:underline focus:outline-none text-sm text-cool-gray-600 block ">
                                         Read More
                                     </button>
                                     <button wire:click="less" class="{{$readmore ? 'hidden' : 'block'}} hover:underline focus:outline-none text-sm text-cool-gray-600 block ">
                                         Less
                                     </button>
+                                    @endif
                                 </div>
                                 <div>
                                     Joined: {{ $user->created_at->format("d F, Y") }}
