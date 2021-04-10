@@ -2,6 +2,6 @@
 
 @section('content')
         <div class="container">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid consequuntur suscipit expedita odio repellat. Sint tempore reiciendis temporibus fugiat facilis sed aperiam. Saepe ad explicabo possimus minus similique, quia magnam?
+            Selamat Datang di Kuyngoding Social Media. Daftar dan tulis cerita kodingmu.
         </div>
 @endsection

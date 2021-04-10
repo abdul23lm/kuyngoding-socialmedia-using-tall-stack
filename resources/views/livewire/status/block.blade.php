@@ -7,13 +7,17 @@
             <div class="w-full relative"">
                 <div class="flex justify-between" x-data="{ dropdownIsOpen: false }" >
                     <a href="{{ route('account.show', ['identifier' => $status->user->usernameOrHash]) }}" class="font-semibold text-cool-gray-900 hover:underline">{{ $status->user->name }}</a>
+
+                    @can('update', $status)
+
                     <button @click="dropdownIsOpen = !dropdownIsOpen" class="hover:bg-cool-gray-100 p-1 rounded-full focus:outline-none">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </button>
                     <div :class="{ 'hidden': !dropdownIsOpen}" class="text-sm bg-white border border-cool-gray-200 rounded py-2 w-48 absolute right-0 top-0 mt-8">
-                        <a href="#" class="block px-3 py-1 hover:bg-cool-gray-100 text-cool-gray-600 hover:text-cool-gray-800">Edit the Status</a>
+                        <a href="{{ route('status.edit', $status->hash) }}" class="block px-3 py-1 hover:bg-cool-gray-100 text-cool-gray-600 hover:text-cool-gray-800">Edit the Status</a>
                         <a href="#" class="block px-3 py-1 hover:bg-cool-gray-100 text-cool-gray-600 hover:text-cool-gray-800">Remove the Status</a>
                     </div>
+                    @endcan
                 </div>
                 <a href="{{ route('status.show', $status->hash) }}">
                     <div class="text-sm text-cool-gray-400 mb-3" >{{ $status->published }}</div>
