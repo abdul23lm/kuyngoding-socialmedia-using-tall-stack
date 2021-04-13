@@ -46,7 +46,7 @@
                         </button>
                     </div>
 
-                    <div  :class="{ 'md:hidden': !dropDownIsOpen }" class="block md:absolute top-0 right-0 md:mr-4 mt-2 md:mt-14 md:bg-white md:w-56 md:rounded md:shadow md:py-2 leading-relax md:leading-loose">
+                    <div  :class="{ 'md:hidden': !dropDownIsOpen }" class="block md:absolute top-0 right-0 md:mr-4 mt-2 md:mt-14 md:w-56 md:rounded md:border md:border-cool-gray-200 md:bg-cool-gray-50 md:py-2 leading-relax md:leading-loose">
                             <a href="{{ route('settings') }}" class="block text-cool-gray-600 hover:text-cool-gray-800 px-4">Settings</a>
                             <a href="{{ route('account.show',auth()->user()->usernameOrHash) }}" class="block text-cool-gray-600 hover:text-cool-gray-800 px-4">Your Profile</a>
                             <a href="" class="block text-cool-gray-600 hover:text-cool-gray-800 px-4">Your Friends</a>

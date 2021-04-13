@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="bg-white p-5 rounded-lg border border-cool-gray-200 w-full sm:w-1/2 sm:mx-auto text-center">
+    <div class="bg-white p-5 rounded-lg border border-cool-gray-200 w-full lg:w-1/2 lg:mx-auto text-center">
         <div class="text-cool-gray-700">
             <div class="text-xl font-bold mb-5" >
                 Are you sure?

@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('home');
+Route::get('/', function () {
+    return redirect()->route('timeline');
+})->name('home');
 
 Route::middleware('auth')->group(function () {
-    Route::get('timeline', 'TimelineController');
+    Route::get('timeline', 'TimelineController')->name('timeline');
     Route::livewire('status/{hash}/edit', 'status.edit')->layout('layouts.app')->name('status.edit');
     Route::livewire('status/{hash}/delete', 'status.delete')->layout('layouts.modal')->name('status.delete');
 });
