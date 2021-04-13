@@ -18,6 +18,7 @@ Route::view('/', 'welcome')->name('home');
 Route::middleware('auth')->group(function () {
     Route::get('timeline', 'TimelineController');
     Route::livewire('status/{hash}/edit', 'status.edit')->layout('layouts.app')->name('status.edit');
+    Route::livewire('status/{hash}/delete', 'status.delete')->layout('layouts.modal')->name('status.delete');
 });
 
 Route::livewire('settings', 'account.edit')->layout('layouts.app', ['title' => 'Settings'])
