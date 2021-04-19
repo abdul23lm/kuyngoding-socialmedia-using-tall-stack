@@ -13,7 +13,9 @@ module.exports = {
             }
         },
     },
-    variants: {},
+    variants: {
+        borderWidth: ['responsive', 'last'],
+    },
     purge: {
         content: [
             './app/**/*.php',
