@@ -1,3 +1,5 @@
+<div>
+@if ($status->comments_count)
 <div class="bg-cool-gray-50 border border-cool-gray-200 mb-5 rounded-lg ml-5 -mt-8 mr-5">
     @foreach ($comments as $comment)
         <div class="flex last:border-b-0 border-cool-gray-200 p-5">
@@ -11,4 +13,6 @@
             </div>
         </div>
     @endforeach
+</div>
+@endif
 </div>

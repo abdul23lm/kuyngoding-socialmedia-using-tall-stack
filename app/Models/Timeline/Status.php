@@ -11,6 +11,8 @@ class Status extends Model
         'hash', 'body'
     ];
 
+    protected $withCount = ['comments'];
+
     public function getPublishedAttribute()
     {
         return $this->created_at->diffForHumans();
