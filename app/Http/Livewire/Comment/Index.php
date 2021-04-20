@@ -7,6 +7,12 @@ use Livewire\Component;
 class Index extends Component
 {
     public $status;
+    public $commentId;
+    protected $listeners = ['commentAdded'];
+
+    public function commentAdded($commentId)
+    {
+    }
 
     public function mount($status)
     {

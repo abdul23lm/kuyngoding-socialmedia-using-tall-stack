@@ -7,7 +7,7 @@
         <div>
             <form wire:submit.prevent="store">
                 <div class="mb-3">
-                    <textarea wire:model="body" class="form-textarea w-full resize-none p-0 border-0 focus:shadow-none" placeholder="Write your idea ..."></textarea>
+                    <textarea wire:model="body" class="form-textarea w-full resize-none p-0 border-0 focus:shadow-none" placeholder="Type your comment . . ."></textarea>
                 </div>
                 <div class="flex justify-end">
                     <x-button.secondary class="secondary">Comment</x-button.secondary>

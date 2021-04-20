@@ -8,7 +8,7 @@ use Livewire\Component;
 class Create extends Component
 {
 
-    public $body;
+    public $body = "";
     public $status;
 
     public function mount($status)
@@ -23,13 +23,15 @@ class Create extends Component
             'body' => 'required'
         ]);
 
-        auth()->user()->comments()->create([
+        $commentId = auth()->user()->comments()->create([
             'status_id' => $this->status->id,
             'body' => $this->body,
             'hash' => \Str::random(22) . strtotime(Carbon::now()),
         ]);
 
-        return redirect()->route('status.show', $this->status->hash);
+        $this->body = "";
+
+        $this->emit('commentAdded', $commentId->id);
     }
 
     public function render()

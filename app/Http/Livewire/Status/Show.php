@@ -11,7 +11,7 @@ class Show extends Component
 
     public function mount($hash)
     {
-        $this->status = Status::with('user')->where('hash', $hash)->firstOrFail();
+        $this->status = Status::with('user')->withCount('comments')->where('hash', $hash)->firstOrFail();
     }
 
     public function render()
