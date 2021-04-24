@@ -21,7 +21,7 @@ class Index extends Component
 
     public function render()
     {
-        $comments = $this->status->comments;
+        $comments = $this->status->comments()->where('parent_id', null)->withCount('children')->get();
         return view('livewire.comment.index', compact('comments'));
     }
 }
