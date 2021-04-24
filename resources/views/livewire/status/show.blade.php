@@ -6,7 +6,9 @@
             </div>
 
             <livewire:comment.index :status="$status" :key="$status->id"/>
+            @auth
             <livewire:comment.create :status="$status" :key="$status->id"/>
+            @endauth
         </div>
     </div>
 </div>
