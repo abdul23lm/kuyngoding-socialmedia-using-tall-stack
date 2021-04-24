@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Comment;
 
 use App\Models\Timeline\Comment;
+use Carbon\Carbon;
 use Livewire\Component;
 
 class Index extends Component
@@ -28,6 +29,22 @@ class Index extends Component
         $this->commentParentId = $id;
         $username = Comment::find($this->commentParentId)->user->usernameOrHash;
         $this->body = "@{$username}";
+    }
+
+    public function reply()
+    {
+        $this->validate([
+            'body' => 'required|max:255'
+        ]);
+        // dd($this->commentParentId);
+        auth()->user()->comments()->create([
+            'parent_id' => $this->commentParentId ?? null,
+            'status_id' => $this->status->id,
+            'body' => $this->body,
+            'hash' => \Str::random(22) . strtotime(Carbon::now()),
+        ]);
+
+        $this->body = "";
     }
 
     public function render()

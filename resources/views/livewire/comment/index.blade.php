@@ -37,7 +37,7 @@
             @endif
     @endforeach
     <div id="showReplyForm">
-        <form>
+        <form wire:submit.prevent="reply">
             <textarea wire:model="body" class="form-textarea w-full resize-none bg-white border-gray-200 rounded-t-none focus:border-cool-gray-200 focus:shadow-none focus:shadow-outline-none border-0 rounded-b-lg
             " placeholder="Reply the comment here . . ."></textarea>
             <button type="submit" class="bg-blue-500 hover:bg-blue-600 py-2 text-center w-full rounded-b-lg text-white">Reply</button>
