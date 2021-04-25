@@ -29,6 +29,8 @@ Route::livewire('settings', 'account.edit')->layout('layouts.app', ['title' => '
 Route::livewire('user/{identifier}', 'account.show')->layout('layouts.app')
     ->name('account.show');
 
+Route::get("user/{identifier}/{follow}", "FollowingController")->name('account.following');
+
 Route::livewire('status/{hash}', 'status.show')
     ->layout('layouts.app')->name('status.show');
 

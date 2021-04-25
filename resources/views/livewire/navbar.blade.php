@@ -5,7 +5,6 @@
                 <div class="flex-shrink-0 mr-3">
                     <img class="w-14 h-14 rounded-full object-cover object-center" src="{{ auth()->user()->gravatar() }}">
                 </div>
-            </div>
             <div>
                 <h1>{{ auth()->user()->name }}</h1>
                 <small class="text-sm text-cool-gray-600" >
@@ -13,10 +12,11 @@
                 </small>
             </div>
 
+            </div>
             <div class="leading-relaxed text-sm text-cool-gray-600 mt-4">
                 {{ auth()->user()->description }}
             </div>
-    </div>
+        </div>
 
     <div class="py-2 leading-loose">
         @auth
