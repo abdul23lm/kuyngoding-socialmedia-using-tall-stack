@@ -10,4 +10,9 @@ trait Likeable
     {
         return $this->morphMany(Like::class, 'likeable');
     }
+
+    public function isLiked()
+    {
+        return (bool) $this->likes()->whereUserId(auth()->id())->first() ? true : false;
+    }
 }
