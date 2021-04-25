@@ -2,11 +2,16 @@
 
 namespace App\Models\Timeline;
 
+use App\Models\Like;
 use App\Models\User;
+use App\Traits\Likeable;
 use Illuminate\Database\Eloquent\Model;
 
 class Status extends Model
 {
+
+    use Likeable;
+
     protected $fillable = [
         'hash', 'body'
     ];
@@ -26,5 +31,10 @@ class Status extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function likes()
+    {
+        return $this->morphMany(Like::class, 'likeable');
     }
 }

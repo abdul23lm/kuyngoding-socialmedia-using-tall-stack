@@ -3,10 +3,14 @@
 namespace App\Models\Timeline;
 
 use App\Models\User;
+use App\Traits\Likeable;
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
+
+    use Likeable;
+
     protected $with = ['user'];
     protected $fillable = ['body', 'hash', 'parent_id', 'status_id'];
 

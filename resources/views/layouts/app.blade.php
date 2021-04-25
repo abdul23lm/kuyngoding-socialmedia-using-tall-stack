@@ -14,12 +14,15 @@
                 <div class="p-4">
                     @yield('rightside')
                 </div>
-            </div>
-            <div class="border-t border-cool-gray-200 p-4">
-                <div class="mb-1">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia nam, vitae commodi exercitationem eius consequatur libero explicabo ad quaerat. Culpa eos quos dicta iure sunt nam debitis voluptatum, ad accusamus?
+                <div class="border-t border-cool-gray-200 p-4 text-center lg:text-left">
+                    <div class="mb-3">
+                    Selamat Datang di Kuyngoding Social Media. Daftar dan tulis cerita kodingmu.
+                    </div>
+                    &copy; {{ config('app.name')}} since 2021 - {{ date('Y')}}
+                    <div class="font-semibold">Developed by
+                        <a href="github.com/abdul23lm" target="_blank">Abdul Latif Munjiat</a>
+                    </div>
                 </div>
-                &copy; {{ config('app.name')}} since 2021 - {{ date('Y')}}
             </div>
         </div>
     </div>
