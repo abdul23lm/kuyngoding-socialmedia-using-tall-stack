@@ -15,6 +15,7 @@
                         {{ $comment->children_count }} {{ Str::plural('Reply', $comment->children_count)}}
                     </div>
                     <button onclick="window.location.href='#showReplyForm'" wire:click.prevent="showReplyForm({{ $comment->id }})" class="focus:outline-none">Add Reply</button>
+                    <livewire:comment.like :comment="$comment" :key="$comment->id"/>
                 </div>
             </div>
         </div>
